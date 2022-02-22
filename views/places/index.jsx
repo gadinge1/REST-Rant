@@ -1,6 +1,14 @@
 const React = require('react')
 const Def = require('./default') 
 
-function index () {}
+function index () {
+    return (
+        <Def>
+            <main>
+                <h1>Title</h1>
+            </main>
+        </Def>
+    )
+}
 
 module.exports = index
