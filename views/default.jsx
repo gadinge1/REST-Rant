@@ -1,5 +1,5 @@
 const React = require('react')
-const Def = require('./default')
+
 
 function Def (html) {
     return (
@@ -7,6 +7,9 @@ function Def (html) {
             <head>
                 <title>Title</title>
             </head>
+            <body>
+                {html.children}
+            </body>
         </html>
     )
 }

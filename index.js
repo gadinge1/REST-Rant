@@ -8,15 +8,14 @@ app.engine('jsx', require('express-react-views').createEngine())
 app.use('/places', require('./controllers/places'))
 
 app.get('/', (req, res) => {
-  res.send('Hello world home page')
+  //res.send('Hello world home page')
+  res.render('home')
 })
 
 app.get('*', (req, res) => {
-  res.send('404 page')
+  //res.send('404 page')
+  res.render('error404')
 })
 
-app.get('*', (req, res) => {
-    res.render('error404')
-})
 
 app.listen(process.env.PORT)
