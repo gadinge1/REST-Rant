@@ -106,3 +106,5 @@ router.put('/:id', (req, res) => {
       res.redirect(`/places/${id}`)
   }
 })
+
+module.exports = router
