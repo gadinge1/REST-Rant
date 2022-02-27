@@ -52,6 +52,7 @@ router.get('/:id', (req, res) => {
     res.render('places/show', { place: places[id], id })
   }
 })
+// delete route
 router.delete('/places/:id', (req, res) => {
   let id = Number(req.params.id)
   if (isNaN(id)) {
@@ -65,4 +66,16 @@ router.delete('/places/:id', (req, res) => {
     res.redirect('/places')
   }
 })
-module.exports = router
+// edit route
+router.get('/:id/edit', (req, res) => {
+  let id = Number(req.params.id)
+  if (isNaN(id)) {
+    res.render('error404')
+  }
+  else if (!places[id]) {
+    res.render('error404')
+  }
+  else {
+    res.render('places/edit', { place: places[id] })
+  }
+})
